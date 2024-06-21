@@ -1,0 +1,21 @@
+uuid: eb55ebb8-f005-43ff-9a9b-a0cde55de9cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colour
+    - node.type.car
+  module:
+    - options
+id: node.car.field_colour
+field_name: field_colour
+entity_type: node
+bundle: car
+label: colour
+description: "Car's main colour"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

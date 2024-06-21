@@ -1,0 +1,21 @@
+uuid: 8f7265d4-e7a8-4e77-bede-c4f79b4a0945
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_region
+    - taxonomy.vocabulary.brands
+  module:
+    - options
+id: taxonomy_term.brands.field_region
+field_name: field_region
+entity_type: taxonomy_term
+bundle: brands
+label: region
+description: 'Brand region'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

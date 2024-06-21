@@ -1,0 +1,8 @@
+uuid: b6732c7a-6efb-4cd8-abab-7b329dfd78dc
+langcode: en
+status: true
+dependencies: {  }
+id: vehicle_date
+label: 'vehicle date'
+locked: false
+pattern: d/m/y

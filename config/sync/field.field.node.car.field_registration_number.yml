@@ -1,0 +1,19 @@
+uuid: b9a0a79b-5aac-413c-9962-f528299141d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_registration_number
+    - node.type.car
+id: node.car.field_registration_number
+field_name: field_registration_number
+entity_type: node
+bundle: car
+label: 'registration number'
+description: "Car's registration number. (10 digits max)"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

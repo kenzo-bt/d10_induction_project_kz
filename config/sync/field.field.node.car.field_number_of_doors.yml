@@ -1,0 +1,21 @@
+uuid: ec3a3212-5fa9-468b-a619-712c98bcffb2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_number_of_doors
+    - node.type.car
+  module:
+    - options
+id: node.car.field_number_of_doors
+field_name: field_number_of_doors
+entity_type: node
+bundle: car
+label: 'number of doors'
+description: 'Number of doors the car has'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

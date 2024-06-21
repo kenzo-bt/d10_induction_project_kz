@@ -1,0 +1,39 @@
+uuid: 0ab54968-fff0-4f53-86b5-312c3bdfb1cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_region
+field_name: field_region
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: uk
+      label: UK
+    -
+      value: europe
+      label: Europe
+    -
+      value: australia
+      label: Australia
+    -
+      value: north_america
+      label: 'North America'
+    -
+      value: south_america
+      label: 'South America'
+    -
+      value: south_pole
+      label: 'South Pole'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
