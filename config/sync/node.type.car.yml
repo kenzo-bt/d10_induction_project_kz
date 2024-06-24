@@ -1,4 +1,4 @@
-uuid: 1ecd678a-5bbb-4c63-b1cc-aebdffad6715
+uuid: b04ab1fe-7197-4cac-9aaf-3009435bcdda
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Car
 type: car
-description: 'Represents a specific instance of a car'
+description: 'Content type for vehicles of type: Car'
 help: ''
 new_revision: true
 preview_mode: 1

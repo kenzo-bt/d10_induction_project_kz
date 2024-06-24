@@ -1,4 +1,4 @@
-uuid: 7de605f8-9ac2-4ca9-93ca-2285a6184499
+uuid: a6ae2ea1-817b-432f-8921-dee22e0670c6
 langcode: en
 status: true
 dependencies:
@@ -12,17 +12,17 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: red
-      label: Red
-    -
-      value: blue
-      label: Blue
+      value: white
+      label: White
     -
       value: black
       label: Black
     -
-      value: white
-      label: White
+      value: blue
+      label: Blue
+    -
+      value: red
+      label: Red
   allowed_values_function: ''
 module: options
 locked: false

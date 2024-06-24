@@ -1,4 +1,4 @@
-uuid: b9a0a79b-5aac-413c-9962-f528299141d3
+uuid: 641c1d12-7a1e-4307-9631-237e5af28364
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_registration_number
 entity_type: node
 bundle: car
 label: 'registration number'
-description: "Car's registration number. (10 digits max)"
+description: 'Maximum 10 digits'
 required: false
 translatable: false
 default_value: {  }

@@ -1,27 +1,28 @@
-uuid: b3fe74ad-69ea-45a7-915e-ae13d6bdc393
+uuid: 5598889b-8ae8-42eb-a76c-45693444baee
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.body
     - field.storage.node.field_brand
     - field.storage.node.field_colour
     - field.storage.node.field_mot_expiry_date
     - field.storage.node.field_number_of_doors
     - field.storage.node.field_registration_number
     - field.storage.taxonomy_term.field_region
+    - field.storage.user.field_first_name
+    - field.storage.user.field_license_issue_date
+    - field.storage.user.field_surname
     - node.type.car
   module:
     - datetime
     - node
     - options
     - taxonomy
-    - text
     - user
 id: car_information
 label: 'Car Information'
 module: views
-description: ''
+description: 'View to display car content items and their information'
 tag: ''
 base_table: node_field_data
 base_field: nid
@@ -393,8 +394,8 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_mot_expiry_date_1:
-          id: field_mot_expiry_date_1
+        field_mot_expiry_date:
+          id: field_mot_expiry_date
           table: node__field_mot_expiry_date
           field: field_mot_expiry_date
           relationship: none
@@ -457,15 +458,15 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        body:
-          id: body
-          table: node__body
-          field: body
-          relationship: none
+        field_license_issue_date:
+          id: field_license_issue_date
+          table: user__field_license_issue_date
+          field: field_license_issue_date
+          relationship: uid
           group_type: group
           admin_label: ''
           plugin_id: field
-          label: Body
+          label: 'License issue date'
           exclude: false
           alter:
             alter_text: false
@@ -507,8 +508,136 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: datetime_default
+          settings:
+            timezone_override: ''
+            format_type: vehicle_date
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_surname:
+          id: field_surname
+          table: user__field_surname
+          field: field_surname
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: Surname
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_first_name:
+          id: field_first_name
+          table: user__field_first_name
+          field: field_first_name
+          relationship: uid
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: "Driver's name"
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ field_first_name }} {{ field_surname }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -572,28 +701,7 @@ display:
             field_identifier: ''
           exposed: false
           granularity: second
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: A-Z
-            field_identifier: title
-          exposed: true
-      arguments:
-        term_node_tid_depth_modifier:
-          id: term_node_tid_depth_modifier
-          table: node_field_data
-          field: term_node_tid_depth_modifier
-          entity_type: node
-          plugin_id: taxonomy_index_tid_depth_modifier
+      arguments: {  }
       filters:
         status:
           id: status
@@ -649,16 +757,19 @@ display:
             placeholder: ''
           is_grouped: false
           group_info:
-            label: ''
-            description: ''
-            identifier: ''
+            label: Title
+            description: null
+            identifier: title
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
         field_region_value:
           id: field_region_value
           table: taxonomy_term__field_region
@@ -673,7 +784,7 @@ display:
           exposed: true
           expose:
             operator_id: field_region_value_op
-            label: Region
+            label: 'Brand Region'
             description: ''
             use_operator: false
             operator: field_region_value_op
@@ -711,67 +822,59 @@ display:
           columns:
             title: title
             field_brand: field_brand
-            field_region: field_region
             field_colour: field_colour
             field_number_of_doors: field_number_of_doors
             field_registration_number: field_registration_number
-            field_mot_expiry_date_1: field_mot_expiry_date_1
-            body: body
+            field_mot_expiry_date: field_mot_expiry_date
+            field_region: field_region
           default: '-1'
           info:
             title:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_brand:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
-              separator: ''
-              empty_column: false
-              responsive: ''
-            field_region:
-              sortable: false
-              default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_colour:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_number_of_doors:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
             field_registration_number:
-              sortable: false
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            field_mot_expiry_date_1:
-              sortable: false
+            field_mot_expiry_date:
+              sortable: true
               default_sort_order: asc
-              align: views-align-center
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
-            body:
-              sortable: false
+            field_region:
+              sortable: true
               default_sort_order: asc
-              align: views-align-left
+              align: ''
               separator: ''
               empty_column: false
               responsive: ''
@@ -801,6 +904,17 @@ display:
           admin_label: 'field_brand: Taxonomy term'
           plugin_id: standard
           required: false
+        uid:
+          id: uid
+          table: node_field_data
+          field: uid
+          relationship: none
+          group_type: group
+          admin_label: User
+          entity_type: node
+          entity_field: uid
+          plugin_id: standard
+          required: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -811,18 +925,18 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_brand'
         - 'config:field.storage.node.field_colour'
         - 'config:field.storage.node.field_mot_expiry_date'
         - 'config:field.storage.node.field_number_of_doors'
         - 'config:field.storage.node.field_registration_number'
         - 'config:field.storage.taxonomy_term.field_region'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_license_issue_date'
+        - 'config:field.storage.user.field_surname'
   page_1:
     id: page_1
     display_title: Page
@@ -838,15 +952,15 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
       tags:
-        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_brand'
         - 'config:field.storage.node.field_colour'
         - 'config:field.storage.node.field_mot_expiry_date'
         - 'config:field.storage.node.field_number_of_doors'
         - 'config:field.storage.node.field_registration_number'
         - 'config:field.storage.taxonomy_term.field_region'
+        - 'config:field.storage.user.field_first_name'
+        - 'config:field.storage.user.field_license_issue_date'
+        - 'config:field.storage.user.field_surname'

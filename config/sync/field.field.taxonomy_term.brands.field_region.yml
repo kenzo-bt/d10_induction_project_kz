@@ -1,4 +1,4 @@
-uuid: 8f7265d4-e7a8-4e77-bede-c4f79b4a0945
+uuid: dae5f16a-90a2-4466-ba7d-024dfa6091fd
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_region
 entity_type: taxonomy_term
 bundle: brands
 label: region
-description: 'Brand region'
+description: ''
 required: false
 translatable: false
 default_value: {  }

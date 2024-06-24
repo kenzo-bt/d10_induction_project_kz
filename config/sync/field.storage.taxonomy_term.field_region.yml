@@ -1,4 +1,4 @@
-uuid: 0ab54968-fff0-4f53-86b5-312c3bdfb1cf
+uuid: d0dc7794-fd3a-4e6b-ae41-f18670e34ec8
 langcode: en
 status: true
 dependencies:
@@ -15,20 +15,14 @@ settings:
       value: uk
       label: UK
     -
+      value: japan
+      label: Japan
+    -
+      value: usa
+      label: USA
+    -
       value: europe
       label: Europe
-    -
-      value: australia
-      label: Australia
-    -
-      value: north_america
-      label: 'North America'
-    -
-      value: south_america
-      label: 'South America'
-    -
-      value: south_pole
-      label: 'South Pole'
   allowed_values_function: ''
 module: options
 locked: false

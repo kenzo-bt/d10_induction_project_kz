@@ -1,4 +1,4 @@
-uuid: ec3a3212-5fa9-468b-a619-712c98bcffb2
+uuid: fa802281-2114-4de2-9fe9-4e1f0f4df10c
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_number_of_doors
 entity_type: node
 bundle: car
 label: 'number of doors'
-description: 'Number of doors the car has'
+description: ''
 required: false
 translatable: false
 default_value: {  }

@@ -1,4 +1,4 @@
-uuid: 9e9dea19-c45c-45ee-bc70-5ef4b2239a51
+uuid: d5d8d84d-482c-478b-bea3-ad1893dd65a6
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_mot_expiry_date
 entity_type: node
 bundle: car
 label: 'mot expiry date'
-description: "Ministry of Transport's certificate expiry date for this car"
+description: ''
 required: false
 translatable: false
 default_value: {  }

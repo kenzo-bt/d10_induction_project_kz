@@ -1,4 +1,4 @@
-uuid: eb55ebb8-f005-43ff-9a9b-a0cde55de9cd
+uuid: 77ff1dd3-6745-463d-a121-bfbcf15cc9c4
 langcode: en
 status: true
 dependencies:
@@ -12,7 +12,7 @@ field_name: field_colour
 entity_type: node
 bundle: car
 label: colour
-description: "Car's main colour"
+description: ''
 required: false
 translatable: false
 default_value: {  }

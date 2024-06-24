@@ -1,8 +1,8 @@
-uuid: b6732c7a-6efb-4cd8-abab-7b329dfd78dc
+uuid: 5ebab3c8-360e-49d8-99c3-4b51aad27a7f
 langcode: en
 status: true
 dependencies: {  }
 id: vehicle_date
-label: 'vehicle date'
+label: vehicle_date
 locked: false
 pattern: d/m/y
