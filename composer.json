@@ -23,6 +23,7 @@
         "drupal/field_group": "^3.4",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/pathauto": "^1.12",
         "drush/drush": "^12.5"
     },
     "conflict": {
