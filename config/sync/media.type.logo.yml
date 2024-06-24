@@ -4,7 +4,7 @@ status: true
 dependencies: {  }
 id: logo
 label: Logo
-description: ''
+description: 'Logo for a company'
 source: image
 queue_thumbnail_downloads: false
 new_revision: false
