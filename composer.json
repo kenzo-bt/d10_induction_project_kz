@@ -25,6 +25,7 @@
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
+        "drupal/webform": "^6.2",
         "drush/drush": "^12.5"
     },
     "conflict": {
