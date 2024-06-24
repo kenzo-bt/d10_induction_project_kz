@@ -1,0 +1,20 @@
+uuid: 64bf808e-c973-40a0-aee2-e15c0f34af7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_mot_expiry_date
+field_name: field_mot_expiry_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

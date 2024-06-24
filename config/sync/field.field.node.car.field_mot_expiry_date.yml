@@ -1,0 +1,21 @@
+uuid: d5d8d84d-482c-478b-bea3-ad1893dd65a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mot_expiry_date
+    - node.type.car
+  module:
+    - datetime
+id: node.car.field_mot_expiry_date
+field_name: field_mot_expiry_date
+entity_type: node
+bundle: car
+label: 'mot expiry date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

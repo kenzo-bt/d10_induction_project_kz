@@ -1,0 +1,33 @@
+uuid: 0b10e490-acc5-45a1-930c-bd2014777deb
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_number_of_doors
+field_name: field_number_of_doors
+entity_type: node
+type: list_integer
+settings:
+  allowed_values:
+    -
+      value: 2
+      label: '2'
+    -
+      value: 3
+      label: '3'
+    -
+      value: 4
+      label: '4'
+    -
+      value: 5
+      label: '5'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

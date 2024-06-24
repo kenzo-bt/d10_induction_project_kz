@@ -1,0 +1,33 @@
+uuid: d0dc7794-fd3a-4e6b-ae41-f18670e34ec8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_region
+field_name: field_region
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: uk
+      label: UK
+    -
+      value: japan
+      label: Japan
+    -
+      value: usa
+      label: USA
+    -
+      value: europe
+      label: Europe
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
