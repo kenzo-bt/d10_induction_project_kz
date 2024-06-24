@@ -1,0 +1,42 @@
+uuid: 57a5c81c-6ff8-4980-becb-bc864be58f76
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.car
+  module:
+    - content_moderation
+id: cars_content_moderation
+label: 'Cars content moderation'
+type: content_moderation
+type_settings:
+  states:
+    draft:
+      label: Draft
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Published
+      weight: 1
+      published: true
+      default_revision: true
+  transitions:
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: 0
+    publish:
+      label: Publish
+      from:
+        - draft
+        - published
+      to: published
+      weight: 1
+  entity_types:
+    node:
+      - car
+  default_moderation_state: draft

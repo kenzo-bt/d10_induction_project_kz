@@ -1,0 +1,22 @@
+uuid: e1a77265-773d-4d4f-b53d-922dfcbc710c
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.car
+    - workflows.workflow.cars_content_moderation
+  module:
+    - content_moderation
+    - node
+id: vehicle_editor
+label: 'Vehicle editor'
+weight: 4
+is_admin: null
+permissions:
+  - 'create car content'
+  - 'delete car revisions'
+  - 'delete own car content'
+  - 'edit own car content'
+  - 'revert car revisions'
+  - 'use cars_content_moderation transition create_new_draft'
+  - 'view car revisions'
