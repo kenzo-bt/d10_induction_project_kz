@@ -1,0 +1,29 @@
+uuid: 11329a43-d865-4d07-86e7-344f7448dfd7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_logo
+    - media.type.logo
+    - taxonomy.vocabulary.brands
+id: taxonomy_term.brands.field_logo
+field_name: field_logo
+entity_type: taxonomy_term
+bundle: brands
+label: Logo
+description: "Brand's logo"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      logo: logo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
