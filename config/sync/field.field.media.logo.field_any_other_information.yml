@@ -1,0 +1,19 @@
+uuid: 9ddf75c3-102e-4f9b-a12a-716dcd898d00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_any_other_information
+    - media.type.logo
+id: media.logo.field_any_other_information
+field_name: field_any_other_information
+entity_type: media
+bundle: logo
+label: 'Any other information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

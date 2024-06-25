@@ -1,0 +1,44 @@
+uuid: faf8f9a5-6ad4-42ee-b5f0-8b6c30404956
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.multimedia.field_file_field
+    - field.field.paragraph.multimedia.field_reference_media
+    - field.field.paragraph.multimedia.field_title
+    - paragraphs.paragraphs_type.multimedia
+  module:
+    - file
+id: paragraph.multimedia.default
+targetEntityType: paragraph
+bundle: multimedia
+mode: default
+content:
+  field_file_field:
+    type: file_generic
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_reference_media:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

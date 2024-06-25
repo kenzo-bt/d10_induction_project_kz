@@ -1,0 +1,27 @@
+uuid: dc5a2830-ec96-465d-a95b-40b3e08a12ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_field
+    - paragraphs.paragraphs_type.multimedia
+  module:
+    - file
+id: paragraph.multimedia.field_file_field
+field_name: field_file_field
+entity_type: paragraph
+bundle: multimedia
+label: 'File field'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf gif csv'
+  max_filesize: ''
+  description_field: true
+field_type: file

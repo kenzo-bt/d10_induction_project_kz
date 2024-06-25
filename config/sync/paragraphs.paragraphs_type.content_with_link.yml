@@ -1,0 +1,10 @@
+uuid: 17a22c4d-d0d5-4c71-bb85-b4800e5957d3
+langcode: en
+status: true
+dependencies: {  }
+id: content_with_link
+label: 'Content with link'
+icon_uuid: null
+icon_default: null
+description: 'Contains a title, content and a link'
+behavior_plugins: {  }

@@ -1,0 +1,13 @@
+uuid: c04ed9f1-4e2b-49f1-ac84-a017cbb58a4d
+langcode: en
+status: true
+dependencies: {  }
+id: logo
+label: Logo
+description: 'Logo for a company'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

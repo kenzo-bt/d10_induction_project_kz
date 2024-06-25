@@ -1,0 +1,30 @@
+uuid: 8c7eae8c-0b00-481c-a5ef-0c68fbeca30e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:881ccf97-9636-41db-b8a7-cea1bf559da8'
+  module:
+    - block_content
+    - system
+  theme:
+    - olivero
+id: olivero_mycars
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:881ccf97-9636-41db-b8a7-cea1bf559da8'
+settings:
+  id: 'block_content:881ccf97-9636-41db-b8a7-cea1bf559da8'
+  label: 'My Cars'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /car-information

@@ -1,0 +1,36 @@
+uuid: 5798120a-d455-4d7c-ace2-ba2a7c59d3c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_components
+    - node.type.car
+    - paragraphs.paragraphs_type.content_with_link
+    - paragraphs.paragraphs_type.multimedia
+  module:
+    - entity_reference_revisions
+id: node.car.field_components
+field_name: field_components
+entity_type: node
+bundle: car
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      content_with_link: content_with_link
+      multimedia: multimedia
+    negate: 0
+    target_bundles_drag_drop:
+      content_with_link:
+        weight: 3
+        enabled: true
+      multimedia:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions
