@@ -1,0 +1,52 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function induction_project_theme() {
+  return [
+    'node__car' => [
+      'base hook' => 'node',
+    ],
+    'paragraph__multimedia' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__content_with_link' => [
+      'base hook' => 'paragraph',
+    ],
+  ];
+}
+
+function induction_project_preprocess_node(&$variables) {
+  // Expose variables to template
+  $variables['car_title'] = $variables['node']->getTitle();
+  $variables['car_owner'] = $variables['node']->getOwner()->label();
+  $variables['car_region'] = $variables['node']->get('field_brand')->referencedEntities()[0]->get('field_region')->value;
+  // Query all car data
+  $query = \Drupal::entityQuery('node');
+  $car_node_ids = $query
+    ->accessCheck(TRUE)
+    ->condition('type', 'car')
+    ->execute();
+  // Generate array with specific car details on queried nodes
+  $car_data = array();
+  foreach ($car_node_ids as $car_id) {
+    $car = \Drupal::entityTypeManager()->getStorage('node')->load($car_id);
+    $car_data[] = [
+      'title' => $car->getTitle(),
+      'owner' => $car->getOwner()->label(),
+      'vehicle_node_id' => $car_id
+    ];
+  }
+  $variables['all_car_data'] = $car_data;
+}
+
+function induction_project_preprocess_paragraph__content_with_link(&$variables) {
+  $variables['title'] = $variables['paragraph']->get('field_title')->value;
+  $variables['hello_world'] = 'Hello, world!';
+}
+
+function induction_project_preprocess_paragraph__multimedia(&$variables) {
+  $variables['title'] = $variables['paragraph']->get('field_title')->value;
+  $variables['hello_world'] = 'Hello, world!';
+}
