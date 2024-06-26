@@ -1,11 +1,11 @@
 <?php
 
 namespace Drupal\induction_project\Controller;
+use \Drupal\Core\Access\AccessResult;
 
 class ViewMyVehicleController {
 
-  public function build($vehicle_nid) {
-    $vehicle = \Drupal::entityTypeManager()->getStorage('node')->load($vehicle_nid);
+  public function build($vehicle) {
     return [
       '#generic_text' => 'Hello, World!',
       '#vehicle_title' => $vehicle->label(),
@@ -14,4 +14,11 @@ class ViewMyVehicleController {
     ];
   }
 
+  public function access() {
+    $current_user = \Drupal::currentUser();
+    if ($current_user->hasRole('vehicle_admin') && !$current_user->hasRole('vehicle_editor')) {
+      return AccessResult::allowed();
+    }
+    return AccessResult::forbidden();
+  }
 }

@@ -36,7 +36,7 @@ function induction_project_preprocess_node(&$variables) {
     ->condition('type', 'car')
     ->execute();
   // Generate array with specific car details on queried nodes
-  $car_data = array();
+  $car_data = [];
   foreach ($car_node_ids as $car_id) {
     $car = \Drupal::entityTypeManager()->getStorage('node')->load($car_id);
     $car_data[] = [
