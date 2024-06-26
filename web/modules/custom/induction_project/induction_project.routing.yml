@@ -1,0 +1,8 @@
+induction_project.view_my_vehicle:
+  path: '/view-my-vehicle/{vehicle_nid}'
+  defaults:
+    _controller: '\Drupal\induction_project\Controller\ViewMyVehicleController::build'
+    _title: 'View my vehicle'
+  requirements:
+    _permission: 'access content'
+    _role: 'vehicle_admin'

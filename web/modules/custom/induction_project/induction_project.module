@@ -14,6 +14,13 @@ function induction_project_theme() {
     'paragraph__content_with_link' => [
       'base hook' => 'paragraph',
     ],
+    'view_my_vehicle_template' => [
+      'variables' => [
+        'generic_text' => NULL,
+        'vehicle_title' => NULL,
+        'author_name' => NULL
+      ]
+    ]
   ];
 }
 
