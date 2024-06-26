@@ -50,3 +50,34 @@ function induction_project_preprocess_paragraph__multimedia(&$variables) {
   $variables['title'] = $variables['paragraph']->get('field_title')->value;
   $variables['hello_world'] = 'Hello, world!';
 }
+
+function induction_project_form_webform_submission_contact_us_add_form_alter(
+  &$form,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  $form_id,
+) {
+  // Randomize the order of radial vehicle options
+  shuffle($form['elements']['what_vehicle_do_you_own']['#options']);
+  // Edit the name field's title
+  $form['elements']['name']['#title'] = t('Please enter your First Name');
+  // Add a description element to the message field
+  $form['elements']['message']['#description'] = t('Please enter some comments here!');
+  // Add an opt-in checkbox to the form
+  $form['elements']['opt-in'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Would you like to opt in?'),
+  ];
+  $form['actions']['submit']['#submit'][] = 'induction_project_opt_in_checkbox_form_submit';
+  // Change the submit button's text
+  $form['elements']['actions']['#submit__label'] = t('Let’s go!');
+}
+
+function induction_project_opt_in_checkbox_form_submit(
+  $form,
+  \Drupal\Core\Form\FormStateInterface $form_state
+) {
+  // Do something if the user has checked the opt-in checkbox
+  if ($form_state->getValue('opt-in') == 1) {
+
+  }
+}
