@@ -1,0 +1,21 @@
+induction_project.view_my_vehicle:
+  path: '/view-my-vehicle/{vehicle}'
+  defaults:
+    _controller: '\Drupal\induction_project\Controller\ViewMyVehicleController::build'
+    _title: 'View my vehicle'
+  options:
+    parameters:
+      vehicle:
+        type: entity:node
+  requirements:
+    _custom_access: '\Drupal\induction_project\Controller\ViewMyVehicleController::access'
+
+induction_project.view_my_vehicle_page_access_form:
+  path: '/admin/config/vehicle-route-config'
+  defaults:
+    _form: '\Drupal\induction_project\Form\ViewMyVehiclePageAccessForm'
+    _title: 'Access Form'
+  requirements:
+    _permission: 'access administration pages'
+  options:
+    _admin_route: TRUE

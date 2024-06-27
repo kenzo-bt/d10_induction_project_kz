@@ -1,0 +1,20 @@
+<hr>
+<h2>Preprocess variables:</h2>
+<ul>
+  <li>Car Title: {{ car_title }}</li>
+  <li>Car Owner: {{ car_owner }}</li>
+  <li>Car Region: {{ car_region }}</li>
+</ul>
+<h3>All cars:</h3>
+{% for car_data in all_car_data %}
+  <ul>
+    <li>ID: {{ car_data.vehicle_node_id }}</li>
+    <li>Title: {{ car_data.title }}</li>
+    <li>Owner: {{ car_data.owner }}</li>
+  </ul>
+  <br>
+{% endfor %}
+<hr>
+<br>
+
+{% include "@olivero/content/node.html.twig" %}

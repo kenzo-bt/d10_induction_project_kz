@@ -1,0 +1,5 @@
+name: 'induction_project'
+type: module
+description: 'Custom module for induction project'
+package: Custom
+core_version_requirement: ^10 || ^11

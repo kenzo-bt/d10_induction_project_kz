@@ -1,0 +1,6 @@
+induction_project.view_my_vehicle_page_access_form:
+  title: 'View my vehicle page access form'
+  route_name: induction_project.view_my_vehicle_page_access_form
+  description: 'Vehicle Page access admin'
+  parent: system.admin_config_system
+  weight: 99
