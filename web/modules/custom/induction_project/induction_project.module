@@ -20,7 +20,13 @@ function induction_project_theme() {
         'vehicle_title' => NULL,
         'author_name' => NULL
       ]
-    ]
+    ],
+    'custom_text_formatter' => [
+      'template' => 'custom-text-formatter',
+      'variables' => [
+        'text' => NULL
+      ]
+    ],
   ];
 }
 
