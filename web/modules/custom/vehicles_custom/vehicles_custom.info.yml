@@ -1,0 +1,5 @@
+name: 'vehicles_custom'
+type: module
+description: 'Custom module for vehicles'
+package: Custom
+core_version_requirement: ^10 || ^11

@@ -1,0 +1,96 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function induction_project_theme() {
+  return [
+    'node__car' => [
+      'base hook' => 'node',
+    ],
+    'paragraph__multimedia' => [
+      'base hook' => 'paragraph',
+    ],
+    'paragraph__content_with_link' => [
+      'base hook' => 'paragraph',
+    ],
+    'view_my_vehicle_template' => [
+      'variables' => [
+        'generic_text' => NULL,
+        'vehicle_title' => NULL,
+        'author_name' => NULL
+      ]
+    ],
+    'custom_text_formatter' => [
+      'template' => 'custom-text-formatter',
+      'variables' => [
+        'text' => NULL
+      ]
+    ],
+  ];
+}
+
+function induction_project_preprocess_node(&$variables) {
+  // Expose variables to template
+  $variables['car_title'] = $variables['node']->getTitle();
+  $variables['car_owner'] = $variables['node']->getOwner()->label();
+  $variables['car_region'] = $variables['node']->get('field_brand')->referencedEntities()[0]->get('field_region')->value;
+  // Query all car data
+  $query = \Drupal::entityQuery('node');
+  $car_node_ids = $query
+    ->accessCheck(TRUE)
+    ->condition('type', 'car')
+    ->execute();
+  // Generate array with specific car details on queried nodes
+  $car_data = [];
+  foreach ($car_node_ids as $car_id) {
+    $car = \Drupal::entityTypeManager()->getStorage('node')->load($car_id);
+    $car_data[] = [
+      'title' => $car->getTitle(),
+      'owner' => $car->getOwner()->label(),
+      'vehicle_node_id' => $car_id
+    ];
+  }
+  $variables['all_car_data'] = $car_data;
+}
+
+function induction_project_preprocess_paragraph__content_with_link(&$variables) {
+  $variables['title'] = $variables['paragraph']->get('field_title')->value;
+  $variables['hello_world'] = 'Hello, world!';
+}
+
+function induction_project_preprocess_paragraph__multimedia(&$variables) {
+  $variables['title'] = $variables['paragraph']->get('field_title')->value;
+  $variables['hello_world'] = 'Hello, world!';
+}
+
+function induction_project_form_webform_submission_contact_us_add_form_alter(
+  &$form,
+  \Drupal\Core\Form\FormStateInterface $form_state,
+  $form_id,
+) {
+  // Randomize the order of radial vehicle options
+  shuffle($form['elements']['what_vehicle_do_you_own']['#options']);
+  // Edit the name field's title
+  $form['elements']['name']['#title'] = t('Please enter your First Name');
+  // Add a description element to the message field
+  $form['elements']['message']['#description'] = t('Please enter some comments here!');
+  // Add an opt-in checkbox to the form
+  $form['elements']['opt-in'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Would you like to opt in?'),
+  ];
+  $form['actions']['submit']['#submit'][] = 'induction_project_opt_in_checkbox_form_submit';
+  // Change the submit button's text
+  $form['elements']['actions']['#submit__label'] = t('Let’s go!');
+}
+
+function induction_project_opt_in_checkbox_form_submit(
+  $form,
+  \Drupal\Core\Form\FormStateInterface $form_state
+) {
+  // Do something if the user has checked the opt-in checkbox
+  if ($form_state->getValue('opt-in') == 1) {
+
+  }
+}
